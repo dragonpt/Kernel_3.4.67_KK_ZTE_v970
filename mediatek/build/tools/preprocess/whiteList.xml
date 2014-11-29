@@ -1,0 +1,11 @@
+<WhiteList>
+	<FileList>
+		<List></List>
+	</FileList>
+	<UnrecursiveDirList>
+		<List></List>
+	</UnrecursiveDirList>
+	<RecursiveDirList>
+		<List></List>
+	</RecursiveDirList>
+</WhiteList>

@@ -1,0 +1,59 @@
+
+
+on post-fs-data
+
+	#for 6620_launcher
+    chmod 0660 /dev/ttyMT2
+    chown system system /dev/ttyMT2
+
+#
+# MT6620 related modules and character device nodes (Begin)
+#
+    # STP, SDIO, WMT, GPS, FM and BT Driver
+    insmod /system/lib/modules/mtk_wmt_detect.ko    
+#    insmod /system/lib/modules/mtk_hif_sdio.ko
+#    insmod /system/lib/modules/mtk_stp_wmt.ko
+#    insmod /system/lib/modules/mtk_stp_uart.ko
+#    insmod /system/lib/modules/mtk_stp_gps.ko
+#    insmod /system/lib/modules/mtk_stp_bt.ko
+#   insmod /system/lib/modules/mtk_wmt_wifi.ko
+
+    # Create char device file for WMT, GPS, BT, FM, WIFI
+    mknod /dev/stpwmt c 190 0;
+    mknod /dev/stpgps c 191 0;
+    mknod /dev/stpbt  c 192 0;
+    
+    chmod 0660 /dev/stpwmt
+    chown system system /dev/stpwmt
+ 
+    # BT
+
+    chmod 0660 /sys/class/rfkill/rfkill0/state 
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state 
+    write sys/class/rfkill/rfkill0/state 0
+
+    	#otp
+	chmod 0660 /dev/otp
+	chown root nvram /dev/otp
+#
+# MT6620 related modules and character device nodes (ends)
+#
+
+on boot
+
+#
+# MT6620 related services (Begin)
+#
+service wmt_loader  /system/bin/logwrapper /system/bin/wmt_loader
+	user root
+	group root
+	oneshot
+
+service 662x_launcher /system/bin/logwrapper /system/bin/6620_launcher -b 4000000 -p /system/etc/firmware/ -d /dev/ttyMT2
+    user system
+	group system
+
+#
+# MT6620 related services (End)
+#
+
