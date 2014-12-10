@@ -84,8 +84,8 @@ static const char longname[] = "Gadget Android";
 /* Default manufacturer and product string , overridden by userspace */
 //<2012/10/02-yaotsulin, Change USB configuration VID/PID for RSD request
 #if 1
-#define MANUFACTURER_STRING "Motorola"
-#define PRODUCT_STRING "X91x"
+#define MANUFACTURER_STRING "ZTE"
+#define PRODUCT_STRING "v970"
 #else
 #define MANUFACTURER_STRING "MediaTek"
 #define PRODUCT_STRING "MT65xx Android Phone"
