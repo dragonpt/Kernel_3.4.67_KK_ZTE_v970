@@ -649,6 +649,6 @@ CONFIG_MTK_USB_UNIQUE_SERIAL = yes
 MTK_BATTARY_NTC_ID=yes
 
 # ztev970_kk {
-ztev970 = yes
+P175A20 = yes
 # }
 TARGET_BUILD_VARIANT=user
