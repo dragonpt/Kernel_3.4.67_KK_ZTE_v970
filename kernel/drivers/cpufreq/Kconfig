@@ -110,6 +110,11 @@ config CPU_FREQ_DEFAULT_GOV_SMARTASS2
        help
        Use the CPUFreq governor 'smartassV2' as default.
 
+config CPU_FREQ_DEFAULT_GOV_SAKURACTIVE
+        bool "sakuractive"
+        select CPU_FREQ_GOV_SAKURACTIVE
+        select CPU_FREQ_GOV_PERFORMANCE
+
 config CPU_FREQ_DEFAULT_GOV_HOTPLUG
 	bool "hotplug"
 	select CPU_FREQ_GOV_HOTPLUG
@@ -238,6 +243,9 @@ config CPU_FREQ_GOV_SMARTASS2
         depends on CPU_FREQ
         help
           'smartassV2' - a "smart" optimized governor!
+
+config CPU_FREQ_GOV_SAKURACTIVE
+        tristate "'sakuractive' cpufreq policy governor"
 
 config CPU_FREQ_GOV_HOTPLUG
 	tristate "'hotplug' cpufreq policy governor"
