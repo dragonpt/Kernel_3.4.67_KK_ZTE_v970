@@ -195,7 +195,8 @@ export KBUILD_BUILDHOST := $(SUBARCH)
 #ARCH		?= $(SUBARCH)
 #CROSS_COMPILE	?= $(CONFIG_CROSS_COMPILE:"%"=%)
 ARCH		?= arm
-CROSS_COMPILE	?= /home/cm/android/v970_kk/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-
+#CROSS_COMPILE	?= /home/cm/android/v970_kk/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-
+CROSS_COMPILE	?= /home/cm/android/v970_kk_testes/prebuilts/arm-cortex_a9-linux-gnueabihf-linaro_4.9.3-2015.01/bin/arm-cortex_a9-linux-gnueabihf-
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
