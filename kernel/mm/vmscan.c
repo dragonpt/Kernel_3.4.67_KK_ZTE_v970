@@ -157,7 +157,7 @@ struct mem_cgroup_zone {
 /*
  * From 0 .. 100.  Higher means more swappy.
  */
-int vm_swappiness = 60;
+int vm_swappiness = 70;
 EXPORT_SYMBOL(vm_swappiness);
 long vm_total_pages;	/* The total number of pages which the VM controls */
 
